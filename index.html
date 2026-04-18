@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leomar &amp; Elizabeth — June 27, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Cinzel:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── PAGE LOADER STYLES (Smooth & Hardware Accelerated) ── */
+body.loading {
+  overflow: hidden; 
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--ink); 
+  display: grid;
+  place-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.l-card {
+  width: 320px;
+  height: 200px;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  /* Faster, smoother scale */
+  animation: l-cardScale 2.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.l-border {
+  position: absolute;
+  inset: 0px;
+  border: 1.5px solid rgba(236,201,106,0.5); 
+  opacity: 0;
+  transform: rotate(10deg);
+  will-change: inset, transform, opacity;
+  animation: l-borderIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+.l-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.l-names-wrap {
+  position: relative;
+  white-space: nowrap;
+  padding-right: 2px;
+  /* Clip-path is buttery smooth compared to animating 'width' */
+  clip-path: inset(0 100% 0 0);
+  border-right: 1.5px solid transparent; 
+  will-change: clip-path;
+  animation: l-revealNames 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.6s forwards;
+}
+
+.l-names {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--cream);
+  line-height: 1.2;
+  padding: 0 10px;
+}
+
+.l-trail {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  animation: l-trailAnim 1.2s ease-in-out 0.6s forwards;
+}
+
+.l-date {
+  position: absolute;
+  top: 50%;
+  margin-top: 26px;
+  color: var(--gold-l);
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(5px);
+  animation: l-fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+.l-bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 0 12px;
+  color: var(--orange);
+  background: var(--ink); 
+  opacity: 0;
+  letter-spacing: 8px;
+  white-space: nowrap; /* THIS STOPS THE STACKING BUG */
+  animation: l-bottomTextIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1.4s forwards;
+}
+
+/* ── SMOOTH KEYFRAMES ── */
+@keyframes l-cardScale {
+  0% { transform: scale(1); border-radius: 10px; }
+  100% { transform: scale(1.05); border-radius: 0px; }
+}
+
+@keyframes l-borderIn {
+  0% { inset: 0px; opacity: 0; transform: rotate(10deg); }
+  100% { inset: 15px; opacity: 1; transform: rotate(0deg); }
+}
+
+@keyframes l-revealNames {
+  0% { clip-path: inset(0 100% 0 0); border-right-color: var(--gold-l); }
+  80% { clip-path: inset(0 0 0 0); border-right-color: var(--gold-l); }
+  100% { clip-path: inset(0 0 0 0); border-right-color: transparent; }
+}
+
+@keyframes l-trailAnim {
+  0% { background: linear-gradient(90deg, rgba(236,201,106,0) 80%, var(--gold-l) 100%); opacity: 0; }
+  50% { background: linear-gradient(90deg, rgba(236,201,106,0) 60%, var(--gold-l) 100%); opacity: 1; }
+  100% { background: linear-gradient(90deg, rgba(236,201,106,0) 90%, var(--gold-l) 100%); opacity: 0; }
+}
+
+@keyframes l-fadeInUp {
+  0% { opacity: 0; transform: translateY(5px); letter-spacing: 0px; }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 5px; }
+}
+
+@keyframes l-bottomTextIn {
+  0% { opacity: 0; letter-spacing: 8px; }
+  100% { opacity: 1; letter-spacing: 3px; }
+}
+
+  /* ── DELICATE FLORAL FRAME ── */
+.delicate-frame {
+  position: relative;
+  border: 1px solid rgba(217, 114, 74, 0.25); /* Very subtle sunset/terracotta line */
+  border-radius: 12px;
+  padding: 48px 20px 32px;
+  margin-top: 10px;
+}
+
+.floral-accent {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--sage); /* Muted Sage green */
+  background: transparent;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Position the background color to 'break' the border line cleanly */
+.floral-accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(4px); /* Blends the line break smoothly */
+}
+
+.floral-accent.top { top: -8px; }
+.floral-accent.bot { bottom: -8px; }
+
+/* ══════════════════════════════════════════
+   CUSTOMIZE: Global palette — change to match
+   your chosen section backgrounds
+══════════════════════════════════════════ */
+:root {
+  --pink:       #E8A0A8;
+  --orange:     #D9724A;
+  --gold:       #C9973A;
+  --gold-l:     #ECC96A;
+  --sage:       #8A9E82;
+  --cream:      #FDF8F2;
+  --cream2:     #F5ECD8;
+  --ink:        #2A1F1A;
+  --ink2:       #4A3828;
+  --muted:      rgba(42,31,26,0.5);
+  --div:        rgba(201,151,58,0.3);
+  --glass-l:    rgba(255,255,255,0.68);
+  --glass-d:    rgba(22,13,8,0.70);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cormorant Garamond',serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+
+/* ── SECTIONS ── */
+.sec{position:relative;width:100%;min-height:100svh;display:flex;align-items:center;justify-content:center}
+.sec-short{min-height:auto;padding:80px 0}
+.sec-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+.sec-bg::after{content:'';position:absolute;inset:0}
+.con{position:relative;z-index:1;width:100%;max-width:680px;margin:0 auto;padding:80px 32px;text-align:center}
+
+/* ══════════════════════════════════════════
+   CUSTOMIZE: Section backgrounds
+   For each section, set the .sec-bg background
+   to your photo: background-image: url('your.jpg')
+   Then tweak the ::after overlay opacity/color
+══════════════════════════════════════════ */
+/* Make the background transparent so the video shows, and add a slight overlay so text stays readable */
+/* 1. Switch to a dark overlay */
+#s-hero .sec-bg { background: transparent; }
+#s-hero .sec-bg::after { background: rgba(0, 0, 0, 0.45); } /* Adjust 0.45 higher if text is still hard to read */
+
+/* 2. Force the hero text to be light */
+#s-hero .eyebrow { color: var(--gold-l); }
+#s-hero .names, #s-hero .amp { color: var(--cream); }
+#s-hero .bigdate, #s-hero .cd-num { color: var(--gold-l); }
+#s-hero .cap, #s-hero .cd-lbl { color: rgba(245, 237, 216, 0.8); } /* Muted cream for subtitles */
+
+/* New rule for the video */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* ── SECTION 3 BACKGROUND ── */
+#s-story .sec-bg { 
+  background-image: url('day.jpg'); /* Add your image here */
+  background-size: cover;
+  background-position: center;
+}
+
+#s-story .sec-bg::after { 
+  background: rgba(22, 13, 8, 0.65); /* A deep brown/black tint to help text pop */
+}
+
+/* ── TEXT COLOR OVERRIDES FOR SECTION 3 ── */
+#s-story h2, #s-story .body, #s-story .italic-note { 
+  color: var(--cream); 
+}
+
+#s-story .eyebrow { 
+  color: var(--gold-l); 
+}
+
+/* Make the countdown box inside this section blend better with the dark background */
+#s-story .cd-wrap {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(236, 201, 106, 0.2) !important;
+}
+
+#s-story .cd-num, #s-story .cd-lbl {
+  color: var(--gold-l) !important;
+}
+
+#s-trail  .sec-bg { background: linear-gradient(135deg,#fef9f0,#fdf0e5); }
+#s-trail  .sec-bg::after { background: rgba(255,255,255,0.0); }
+
+#s-entourage .sec-bg { background: linear-gradient(160deg,#f8f5f0,#f0ede5); }
+#s-entourage .sec-bg::after { background: rgba(255,255,255,0.0); }
+
+#s-details .sec-bg { background: linear-gradient(135deg,#1e1008,#2d1810); }
+#s-details .sec-bg::after { background: rgba(0,0,0,0.25); }
+
+#s-timeline .sec-bg { background: linear-gradient(160deg,#1a0e06,#2a160a); }
+#s-timeline .sec-bg::after { background: rgba(0,0,0,0.30); }
+
+/* ── TYPOGRAPHY ── */
+.eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.6em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;display:block}
+.eyebrow-l{color:rgba(236,201,106,.8)}
+.names{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(52px,12vw,88px);line-height:1;color:var(--ink)}
+.names-l{color:var(--cream)}
+.amp{font-size:.62em;color:var(--orange);display:block;font-style:normal}
+.amp-l{color:var(--gold-l)}
+h2{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(26px,5.5vw,40px);line-height:1.2;color:var(--ink);margin-bottom:8px}
+h2.l{color:var(--cream)}
+h3{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--ink);margin-bottom:6px}
+h3.l{color:var(--cream)}
+.body{font-size:17px;line-height:1.95;color:var(--ink2)}
+.body-l{color:rgba(245,237,216,.8)}
+.cap{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.cap-l{color:rgba(236,201,106,.65)}
+.italic-note{font-style:italic;font-size:15px;color:var(--muted);line-height:1.8}
+
+/* ── DIVIDERS ── */
+.div{display:flex;align-items:center;gap:14px;margin:22px 0}
+.div-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--div),transparent)}
+.div-line-l{background:linear-gradient(to right,transparent,rgba(236,201,106,.25),transparent)}
+.div-gem{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.div-gem-l{background:rgba(236,201,106,.5)}
+.div-ctr{max-width:260px;margin:22px auto}
+
+/* ── GLASS CARDS ── */
+.card {
+  background: rgba(255, 255, 255, 0.85); /* Slightly less transparent */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(217, 114, 74, 0.15); /* Warmer orange border */
+  border-top-color: rgba(217, 114, 74, 0.4);
+  border-radius: 8px; /* Slightly rounder edges */
+  padding: 36px 40px;
+  margin: 14px 0;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(217, 114, 74, 0.06); /* Warm sunset shadow */
+}
+.card-d{background:var(--glass-d);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(236,201,106,.12);border-top-color:rgba(236,201,106,.32);border-radius:5px;padding:36px 40px;margin:14px 0;text-align:center}
+.venue{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:8px}
+.venue-l{color:var(--cream)}
+.vdet{font-size:15px;color:var(--muted);line-height:2}
+.vdet-l{color:rgba(245,237,216,.6)}
+.time-big{font-family:'Cinzel',serif;font-size:30px;color:var(--orange);letter-spacing:.2em;display:block;margin:14px 0 8px}
+.time-big-l{color:var(--gold-l)}
+
+/* ── BIG DATE ── */
+.bigdate{font-family:'Cinzel',serif;font-size:clamp(12px,2.5vw,17px);letter-spacing:.35em;color:var(--orange);margin:26px 0 8px}
+
+/* ── COUNTDOWN ── */
+.cd-wrap{display:flex;gap:28px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.cd-unit{text-align:center}
+.cd-num{font-family:'Playfair Display',serif;font-size:clamp(36px,8vw,52px);color:var(--orange);line-height:1;display:block}
+.cd-lbl{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block}
+
+/* ── PHOTO SLOTS ── */
+.photo-slot img {
+  width: 100%; /* Forces the image to stay inside its container */
+  aspect-ratio: 4 / 5; /* Gives it a consistent, portrait-style arch shape */
+  object-fit: cover; /* Ensures the photo fills the arch without squishing */
+  border-radius: 200px 200px 8px 8px !important; 
+  border: 6px solid #FFF; 
+  box-shadow: 0 12px 30px rgba(42, 31, 26, 0.08); 
+  display: block; /* Removes any weird invisible spacing below the image */
+}
+
+/* ── STORY SECTION PHOTO ── */
+.story-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Creates a beautiful wide, cinematic crop */
+  object-fit: cover;
+  border-radius: 8px; /* Standard soft rounded corners */
+  border: 6px solid #FFF; /* Matches the white frame of the venue photos */
+  box-shadow: 0 12px 30px rgba(42, 31, 26, 0.08);
+  display: block;
+  margin: 0 auto;
+}
+
+.photo-slot{width:100%;border-radius:5px;overflow:hidden;position:relative}
+/* CUSTOMIZE: replace .photo-ph background with background-image:url('your.jpg');background-size:cover */
+.photo-ph{width:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
+  background:linear-gradient(135deg,rgba(201,151,58,.1),rgba(216,113,74,.08));
+  border:1.5px dashed rgba(201,151,58,.35);border-radius:5px}
+.photo-ph-lbl{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,151,58,.6)}
+
+/* ── FLORAL BORDER ── */
+.floral-wrap{position:relative;padding:0 52px}
+.floral-strip{position:absolute;top:0;bottom:0;width:50px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;overflow:hidden;pointer-events:none}
+.floral-strip.l{left:0}
+.floral-strip.r{right:0;transform:scaleX(-1)}
+
+/* ── MEMORY TRAIL / POLAROIDS ── */
+.trail{display:flex;flex-direction:column;gap:0;position:relative;max-width:560px;margin:0 auto}
+.trail::before{content:'';position:absolute;left:calc(50% - .5px);top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--pink),var(--orange),var(--gold),transparent)}
+.trail-item{display:grid;grid-template-columns:1fr 28px 1fr;align-items:start;gap:0;margin-bottom:40px}
+.trail-item:nth-child(even) .trail-text{order:3;text-align:left}
+.trail-item:nth-child(even) .trail-photo{order:1;text-align:right}
+.trail-item:nth-child(odd)  .trail-text{order:1;text-align:right}
+.trail-item:nth-child(odd)  .trail-photo{order:3;text-align:left}
+.trail-dot{order:2;display:flex;justify-content:center;padding-top:12px;position:relative;z-index:1}
+.trail-dot-inner{width:10px;height:10px;border-radius:50%;background:var(--pink);border:2px solid var(--cream);box-shadow:0 0 0 2px var(--pink)}
+.trail-item:nth-child(2)  .trail-dot-inner{background:var(--orange);box-shadow:0 0 0 2px var(--orange)}
+.trail-item:nth-child(3)  .trail-dot-inner{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.trail-item:nth-child(4)  .trail-dot-inner{background:var(--sage);box-shadow:0 0 0 2px var(--sage)}
+.trail-item:nth-child(5)  .trail-dot-inner{background:var(--pink);box-shadow:0 0 0 2px var(--pink)}
+.trail-item:nth-child(6)  .trail-dot-inner{background:var(--orange);box-shadow:0 0 0 2px var(--orange)}
+.trail-item:nth-child(7)  .trail-dot-inner{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.trail-item:nth-child(8)  .trail-dot-inner{background:#c46080;box-shadow:0 0 0 2px #c46080}
+.trail-item:nth-child(9)  .trail-dot-inner{background:var(--orange);box-shadow:0 0 0 2px var(--orange)}
+
+.polaroid{display:inline-block;background:#fff;padding:8px 8px 28px;box-shadow:0 4px 18px rgba(0,0,0,.12);transform:rotate(-2deg);transition:transform .3s ease;max-width:180px;width:100%}
+.polaroid:hover{transform:rotate(0deg) scale(1.03)}
+.trail-item:nth-child(even) .polaroid{transform:rotate(2deg)}
+.trail-item:nth-child(even) .polaroid:hover{transform:rotate(0deg) scale(1.03)}
+/* CUSTOMIZE: Replace .pol-img background with your photo */
+.pol-img{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,rgba(232,160,168,.2),rgba(212,168,67,.12));display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.15em;color:rgba(201,151,58,.5);text-transform:uppercase;text-align:center;padding:8px}
+.pol-cap{font-family:'Jost',sans-serif;font-size:10px;color:#666;margin-top:8px;text-align:center;letter-spacing:.05em}
+
+.trail-text{padding:8px 12px}
+.trail-date{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.35em;color:var(--orange);text-transform:uppercase;margin-bottom:4px}
+.trail-title{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:var(--ink);line-height:1.3;margin-bottom:5px}
+.trail-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* ── ENTOURAGE ── */
+.ent-section{margin-bottom:40px;text-align:center}
+.ent-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;border-bottom:1px solid var(--div);padding-bottom:10px}
+.ent-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink2);line-height:2;letter-spacing:.02em}
+.ent-name-pair{display:block;font-style:normal;font-size:14.5px;line-height:1.4;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(201,151,58,.12)}
+.ent-name-pair:last-child{border-bottom:none}
+.ent-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;text-align:left}
+.ent-role{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.3em;color:var(--orange);text-transform:uppercase;display:block;margin-top:2px}
+.ent-parents{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink2);line-height:2;margin-bottom:4px}
+.ent-family{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.3em;color:var(--muted);margin-bottom:16px;text-transform:uppercase}
+
+/* ── SPONSOR BADGE ── */
+.sponsor-name{font-size:14.5px;color:var(--ink2);line-height:1.5;margin-bottom:4px}
+.sponsor-role{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase}
+.sponsor-item{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(201,151,58,.1)}
+.sponsor-item:last-child{border-bottom:none}
+
+/* ── SMALL ENTOURAGE GRID ── */
+/* ── SMALL ENTOURAGE GRID ── */
+.ent-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.ent-grid-item {
+  width: calc(33.333% - 7px);
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.5;
+  padding: 8px;
+  border: 1px solid rgba(201,151,58,.12);
+  border-radius: 3px;
+  text-align: center;
+}
+.ent-grid-role {
+  font-family: 'Cinzel', serif;
+  font-size: 7.5px;
+  letter-spacing: .2em;
+  color: var(--orange);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+/* ── EVENT TIMELINE ── */
+.evt-list{max-width:460px;margin:0 auto;text-align:left}
+.evt-item{display:grid;grid-template-columns:88px 1fr;gap:20px;margin-bottom:26px;opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+.evt-item.vis{opacity:1;transform:translateY(0)}
+.evt-time{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;color:var(--gold-l);text-transform:uppercase;text-align:right;border-right:1px solid rgba(236,201,106,.2);padding-right:18px;padding-top:3px}
+.evt-name{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:var(--cream);margin-bottom:3px}
+.evt-note{font-size:13px;color:rgba(245,237,216,.45);font-style:italic;line-height:1.7}
+
+/* ── DRESS CODE SWATCHES ── */
+.swatches{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:28px 0}
+.swatch{text-align:center}
+.sw-circle{width:58px;height:58px;border-radius:50%;border:2px solid rgba(255,255,255,.15);box-shadow:0 6px 20px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);position:relative;margin:0 auto 8px}
+.sw-name{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.15em;color:rgba(245,237,216,.65);text-transform:uppercase}
+
+/* ── SCROLL FADE ── */
+.fi{opacity:0;transform:translateY(26px);transition:opacity .85s ease,transform .85s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+.fi.d1{transition-delay:.12s}.fi.d2{transition-delay:.24s}.fi.d3{transition-delay:.36s}.fi.d4{transition-delay:.48s}
+
+/* ── LOVE MOMENT BLOCKS ── */
+.love-block{max-width:540px;margin:0 auto 0;text-align:left}
+.love-lead{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(19px,4vw,26px);color:var(--ink);line-height:1.5;margin-bottom:20px}
+
+/* ── MUSIC PLAYER ── */
+#music-player{position:fixed;bottom:26px;right:22px;z-index:999;display:flex;align-items:center;gap:10px}
+.mbtn{width:50px;height:50px;border-radius:50%;border:none;background:rgba(22,12,6,.88);backdrop-filter:blur(12px);border:1px solid rgba(201,151,58,.4);color:var(--gold-l);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(0,0,0,.3);flex-shrink:0}
+.mbtn:hover{transform:scale(1.08);box-shadow:0 6px 26px rgba(201,151,58,.22)}
+.mbtn.playing{animation:mbtnPulse 2.5s ease-in-out infinite}
+@keyframes mbtnPulse{0%,100%{border-color:rgba(201,151,58,.4)}50%{border-color:rgba(216,113,74,.75);box-shadow:0 4px 18px rgba(0,0,0,.3),0 0 0 4px rgba(201,151,58,.08)}}
+.mlabel{background:rgba(22,12,6,.88);backdrop-filter:blur(12px);border:1px solid rgba(201,151,58,.22);border-radius:22px;padding:7px 15px;font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.12em;color:rgba(236,201,106,.8);white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s;pointer-events:none;max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.mlabel.show{opacity:1;transform:translateX(0)}
+.sw-bars{display:flex;align-items:center;gap:2.5px;height:16px}
+.bar{width:3px;background:var(--gold-l);border-radius:2px;animation:barD .8s ease-in-out infinite alternate}
+.bar:nth-child(1){height:5px;animation-delay:0s}
+.bar:nth-child(2){height:13px;animation-delay:.1s}
+.bar:nth-child(3){height:9px;animation-delay:.22s}
+.bar:nth-child(4){height:15px;animation-delay:.07s}
+.bar:nth-child(5){height:6px;animation-delay:.17s}
+@keyframes barD{from{transform:scaleY(.35);opacity:.55}to{transform:scaleY(1);opacity:1}}
+
+/* ── NAV DOTS ── */
+#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:998}
+.ndot{width:5px;height:5px;border-radius:50%;background:rgba(201,151,58,.3);border:1px solid rgba(201,151,58,.4);cursor:pointer;transition:all .3s}
+.ndot.a{background:var(--gold);transform:scale(1.7);box-shadow:0 0 5px rgba(201,151,58,.5)}
+
+/* ── CLOSING ── */
+.closing-names{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(40px,10vw,70px);color:var(--cream);line-height:1;opacity:.88}
+
+/* ── QR PLACEHOLDER ── */
+.qr-box{width:100px;height:100px;border:1.5px dashed rgba(201,151,58,.4);border-radius:4px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.2em;color:rgba(201,151,58,.5);text-transform:uppercase;text-align:center;padding:8px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .con{padding:60px 20px}
+  .card,.card-d{padding:26px 22px}
+  .floral-wrap{padding:0 40px}
+  .trail-item{grid-template-columns:1fr 22px 1fr}
+  .polaroid{max-width:140px}
+  .trail-title{font-size:14px}
+  .ent-cols{grid-template-columns:1fr;gap:16px}
+  .ent-grid-item{width:calc(50% - 5px)}
+  .swatches{gap:14px}.sw-circle{width:50px;height:50px}
+  .cd-wrap{gap:18px}
+  #nav{display:none}
+}
+
+@keyframes scrollBounce{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(7px);opacity:.8}}
+</style>
+</head>
+<body>
+
+  <div id="loader">
+  <div class="l-card">
+    <div class="l-border"></div>
+    <div class="l-content">
+      <div class="l-names-wrap">
+        <span class="l-names">Leomar <span style="color:var(--gold-l)">&amp;</span> Elizabeth</span>
+        <span class="l-trail"></span>
+      </div>
+      <span class="l-date">JUNE 27, 2026</span>
+    </div>
+    <span class="l-bottom-text">YOU ARE INVITED</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 1 — HERO
+     CUSTOMIZE: #s-hero .sec-bg { background-image: url('your-hero.jpg'); }
+══════════════════════════════════════════ -->
+<section class="sec" id="s-hero">
+  
+  <video autoplay loop muted playsinline class="hero-video">
+    <source src="sunset.mp4" type="video/mp4">
+  </video>
+
+  <div class="sec-bg"></div>
+  
+  <div class="con">
+    <span class="eyebrow fi">Save the Date</span>
+    <h1 class="names fi d1">
+      Leomar
+      <span class="amp">&amp;</span>
+      Elizabeth
+    </h1>
+    <div class="div div-ctr fi d2">
+      <div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div>
+    </div>
+    <div class="bigdate fi d2">Saturday · June 27, 2026</div>
+    <div class="cap fi d3" style="margin-top:6px">Tanauan City, Batangas</div>
+
+    <div class="fi d4" style="margin-top:52px; display:flex; flex-direction:column; align-items:center; gap:20px;">
+      
+      <div style="font-family:'Jost',sans-serif; font-size:10px; letter-spacing:.2em; color:var(--gold-l); text-transform:uppercase; text-align:center;">
+        Tap to play our song &amp; scroll down
+      </div>
+
+      <button class="mbtn" onclick="toggleMusic()" aria-label="Play music" style="position:relative;">
+        <svg class="play-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="4,2 14,8 4,14"/></svg>
+        <div class="eq-icon sw-bars" style="display:none">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+      </button>
+
+      <div style="animation:scrollBounce 2s ease-in-out infinite; color:var(--gold-l); margin-top:10px;">
+        <svg width="16" height="26" viewBox="0 0 16 26" fill="none">
+          <rect x="1" y="1" width="14" height="20" rx="7" stroke="currentColor" stroke-width="1.1" opacity=".4"/>
+          <circle cx="8" cy="7" r="2.2" fill="currentColor" opacity=".6"/>
+          <path d="M4,23 L8,26 L12,23" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/>
+        </svg>
+      </div>
+
+    </div>
+
+    <div style="margin-top:52px;animation:scrollBounce 2s ease-in-out infinite" class="fi d4">
+      <svg width="16" height="26" viewBox="0 0 16 26" fill="none">
+        <rect x="1" y="1" width="14" height="20" rx="7" stroke="currentColor" stroke-width="1.1" opacity=".4"/>
+        <circle cx="8" cy="7" r="2.2" fill="currentColor" opacity=".6"/>
+        <path d="M4,23 L8,26 L12,23" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2 — SAVE THE DATE + VENUES
+     CUSTOMIZE: #s-savedate .sec-bg
+══════════════════════════════════════════ -->
+<section class="sec sec-short" id="s-savedate">
+  <div class="sec-bg" style="background:linear-gradient(160deg,#fdf9f4,#fdf0e8)"></div>
+  <div class="con">
+    
+    <div class="delicate-frame fi">
+      
+      <div class="floral-accent top">
+        <svg width="50" height="14" viewBox="0 0 50 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+          <path d="M2,7 C12,7 18,2 25,2 C32,2 38,7 48,7" opacity="0.4"/>
+          <path d="M25,2 C22,5 18,6 15,6 C18,8 22,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+          <path d="M25,2 C28,5 32,6 35,6 C32,8 28,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+        </svg>
+      </div>
+
+      <div style="text-align:center; padding-bottom:10px;">
+        <span class="eyebrow">You are cordially invited</span>
+        <h2 style="margin-bottom:4px">Leomar &amp; Elizabeth</h2>
+        <div class="cap" style="margin-bottom:26px">are getting married</div>
+        <div class="div div-ctr"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
+
+        <div class="photo-slot" style="margin-bottom:22px">
+          <img src="church.jpg" alt="St. Augustine Parish">
+        </div>
+
+        <div class="bigdate">Saturday · June 27, 2026</div>
+
+        <div class="card d1" style="margin-top:22px">
+          <div class="cap" style="margin-bottom:10px">Ceremony</div>
+          <div class="venue">St. Augustine Parish</div>
+          <span class="time-big">1:30 PM</span>
+          <div class="vdet">Brgy. Santor, Tanauan City, Batangas</div>
+        </div>
+
+         <div class="photo-slot d2" style="margin-top:22px">
+          <img src="pat.jpg" alt="Patricio's Cafe & Restaurant">
+        </div>
+
+        <div class="card d2">
+          <div class="cap" style="margin-bottom:10px">Dinner &amp; Celebration</div>
+          <div class="venue">Patricio's Café &amp; Restaurant</div>
+          <div class="vdet" style="margin-top:8px">Brgy. Luyos, Tanauan City, Batangas</div>
+        </div>
+
+       
+      </div><div class="floral-accent bot">
+        <svg width="50" height="14" viewBox="0 0 50 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="transform: rotate(180deg);">
+          <path d="M2,7 C12,7 18,2 25,2 C32,2 38,7 48,7" opacity="0.4"/>
+          <path d="M25,2 C22,5 18,6 15,6 C18,8 22,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+          <path d="M25,2 C28,5 32,6 35,6 C32,8 28,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+        </svg>
+      </div>
+
+    </div></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3 — LOVE STORY
+     CUSTOMIZE: #s-story .sec-bg
+══════════════════════════════════════════ -->
+<section class="sec sec-short" id="s-story">
+  <div class="sec-bg"></div>
+  <div class="con">
+    <span class="eyebrow fi">Our Story</span>
+    <h2 class="fi" style="margin-bottom:16px">Our Go-With-The-Flow<br>Love Story</h2>
+    <div class="div div-ctr fi"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
+
+    <div class="love-block fi d1" style="margin-top:32px">
+      <p class="body" style="margin-bottom:18px">
+        Approximately eight years ago, in the lobby of FAITH, Leomar first noticed Eli because of her loud voice and laughter—though he didn’t even know her name yet. Every time he saw her around campus, he found himself drawn to her cheerful and lively personality.
+      </p>
+      <p class="body" style="margin-bottom:18px">
+        Fast forward to the time of the pandemic. One chill night, while drinking with his friends, Leomar randomly saw Eli’s Facebook profile in his suggested friends. With a bit of courage from the alcohol, he immediately sent her a friend request. In Eli’s POV, she was usually intentional when accepting friends online. But at that time, something felt different—Leomar’s request caught her attention. She stalked his profile, checked his background, and found out they came from the same college and accepted him. Despite considering this as unusual behavior of her, she tried to accept him because she had a thought of “she might be missing out on being too protective of herself.”
+      </p>
+      <p class="body" style="margin-bottom:18px">
+        As in... right after, Leomar immediately sent a “Hi.” Eli was a bit hesitant during their “getting to know” stage, but Leomar reassured her that their conversations didn’t have to lead to anything romantic—no pressure, just go with the flow. At that time, neither of them found themselves at their best, as they were dealing with broken souls and personal battles. Still, through each other, they slowly built a genuine connection and companionship.
+      </p>
+      <p class="body" style="margin-bottom:18px">
+        They went through the getting-to-know-you stage through shared simple, random adventures together. But it wasn’t as smooth, as they encountered multiple goodbyes for choosing self-reconnection.
+      </p>
+      <p class="body" style="margin-bottom:18px">
+        Despite all the goodbyes and rejections, Leomar never stopped hoping they would find their way back to each other. After taking time and self-reflection, they eventually both took the risk and chose to stay—to root for one another. No proposal happened, they simply realized they had found a home in each other.
+      </p>
+      <p class="body">
+        Five years later, they decided to tie the knot.
+      </p>
+    </div>
+
+    <div class="cd-wrap fi d2" style="margin-top:40px; padding:28px 24px; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);">
+  
+  <div style="width:100%; margin-bottom:20px; text-align:center">
+    <span class="cap" style="display:block; margin-bottom:4px; color:rgba(255,255,255,0.7)">Counting down to</span>
+    <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:18px; color:var(--gold-l)">June 27, 2026</div>
+  </div>
+
+  <div class="cd-unit"><span class="cd-num" id="cd-d2" style="color:var(--gold-l)">—</span><span class="cd-lbl" style="color:rgba(255,255,255,0.6)">Days</span></div>
+  <div class="cd-unit"><span class="cd-num" id="cd-h2" style="color:var(--gold-l)">—</span><span class="cd-lbl" style="color:rgba(255,255,255,0.6)">Hours</span></div>
+  <div class="cd-unit"><span class="cd-num" id="cd-m2" style="color:var(--gold-l)">—</span><span class="cd-lbl" style="color:rgba(255,255,255,0.6)">Minutes</span></div>
+  <div class="cd-unit"><span class="cd-num" id="cd-s2" style="color:var(--gold-l)">—</span><span class="cd-lbl" style="color:rgba(255,255,255,0.6)">Seconds</span></div>
+</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4 — MEMORY TRAIL
+     CUSTOMIZE: #s-trail .sec-bg
+     Replace .pol-img contents with <img> tags
+══════════════════════════════════════════ -->
+<section class="sec sec-short" id="s-trail">
+  <div class="sec-bg"></div>
+  <div class="con">
+    <span class="eyebrow fi">The Memory Trail</span>
+    <h2 class="fi" style="margin-bottom:6px">Milestones</h2>
+    <p class="italic-note fi" style="margin-bottom:48px">A map of the moments that made us.</p>
+
+    <div class="trail">
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">Aug 30, 2020</div>
+          <div class="trail-title">FIRST MEET AT PADRE PIO & SM LIPA </div>
+          <div class="trail-desc">We didn’t get to take a photo when we first met, but here’s one of our first selfies together.</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="1.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="First meet">
+            <div class="pol-cap">Aug 30, 2020</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="2.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Lemery Beach">
+            <div class="pol-cap">SEPTEMBER 26, 2020</div>
+          </div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-text">
+          <div class="trail-date">SEPTEMBER 26, 2020</div>
+          <div class="trail-title">LEMERY BEACH TRIP AS FRIENDS</div>
+          <div class="trail-desc">We thought this was the end of “us”, but actually became one of the foundations of “us”.</div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">NOVEMBER 22, 2020</div>
+          <div class="trail-title">MT. BULALO OR BULALO HILL?</div>
+          <div class="trail-desc">At the burol, our favorite nearby nature spot.</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="3.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Mt Bulalo">
+            <div class="pol-cap">NOVEMBER 22, 2020</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="4.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="New Year">
+            <div class="pol-cap">JANUARY 1, 2021</div>
+          </div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-text">
+          <div class="trail-date">JANUARY 1, 2021</div>
+          <div class="trail-title">FIRST NEW YEAR CELEBRATION </div>
+          <div class="trail-desc">Starting that day, we’ve spent every New Year’s date at the burol.</div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">MARCH 14, 2021</div>
+          <div class="trail-title">LEOMAR FIRST MEETING THE CASTILLO FAMILY</div>
+          <div class="trail-desc">We didn’t get to document that day, but here’s one of our first photos together with the Castillo family.</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="5.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Castillo Family">
+            <div class="pol-cap">MARCH 14, 2021</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="6.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Gonzales Family">
+            <div class="pol-cap">APRIL 5, 2021</div>
+          </div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-text">
+          <div class="trail-date">APRIL 5, 2021</div>
+          <div class="trail-title">ELI FIRST MEETING THE GONZALES FAMILY</div>
+          <div class="trail-desc">Another undocumented day, but here’s one of our first photos together with the Gonzales family.</div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">MAY 27, 2021</div>
+          <div class="trail-title">AGREED TO BE OFFICIAL LOVERS</div>
+          <div class="trail-desc">This was the first time we held each other’s hands.</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="7.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Official">
+            <div class="pol-cap">MAY 27, 2021</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="8.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Pagbilao">
+            <div class="pol-cap">JUNE 12, 2021</div>
+          </div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-text">
+          <div class="trail-date">JUNE 12, 2021</div>
+          <div class="trail-title">PAGBILAO BEACH TRIP</div>
+          <div class="trail-desc">Sponty beach date with our friends.</div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">SEPTEMBER 28, 2024</div>
+          <div class="trail-title">MT. KAPIGPIGLATAN BUNDOK TRIP</div>
+          <div class="trail-desc">Best quality time = Nature trip</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="9.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Milestone 9">
+            <div class="pol-cap">SEPTEMBER 28, 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="10.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Milestone 10">
+            <div class="pol-cap">OCTOBER 18, 2025</div>
+          </div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-text">
+          <div class="trail-date">OCTOBER 18, 2025</div>
+          <div class="trail-title">PUERTO GALERA TRIP</div>
+          <div class="trail-desc">Leomar’s pre-birthday celebration </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">DECEMBER 5, 2025</div>
+          <div class="trail-title">THE VERY RAW PROPOSAL</div>
+          <div class="trail-desc">Only God, us, and Botok witnessed everything</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="11.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Milestone 9">
+            <div class="pol-cap">DECEMBER 5, 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-photo">
+          <div class="polaroid">
+            <img src="12.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Milestone 10">
+            <div class="pol-cap">DECEMBER 8, 2025</div>
+          </div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-text">
+          <div class="trail-date">DECEMBER 8, 2025</div>
+          <div class="trail-title">TAKE 2 PROPOSAL</div>
+          <div class="trail-desc">Leomar had to double-check if it’s legit. And… it’s a “YES” from Eli!</div>
+        </div>
+      </div>
+
+      <div class="trail-item fi">
+        <div class="trail-text">
+          <div class="trail-date">JANUARY 25, 2026</div>
+          <div class="trail-title">PAMAMANHIKAN</div>
+          <div class="trail-desc">The Gonzales–Delos Reyes family’s first meeting with the Castillo–Marudo family</div>
+        </div>
+        <div class="trail-dot"><div class="trail-dot-inner"></div></div>
+        <div class="trail-photo">
+          <div class="polaroid" style="background:#fffbf0">
+             <img src="13.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block" alt="Milestone 10">
+            <div class="pol-cap" style="font-weight:500;color:var(--orange)">JANUARY 25, 2026</div>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+</section>
+<!-- ══════════════════════════════════════════
+     SECTION 5 — ENTOURAGE
+     CUSTOMIZE: #s-entourage .sec-bg
+══════════════════════════════════════════ -->
+<section class="sec sec-short" id="s-entourage">
+  <div class="sec-bg" style="background: linear-gradient(160deg, #FDF9F4 0%, #FCE8B2 35%, #FAD0B4 75%, #F5CDD2 100%);"></div>
+  <div class="con">
+
+    <div class="delicate-frame fi" style="border-color: rgba(42, 31, 26, 0.15); padding-top: 50px;">
+      
+      <div class="floral-accent top" style="background: transparent;">
+        <div style="background: #FDF9F4; border-radius: 20px; padding: 0 12px; display: flex; align-items: center;">
+          <svg width="50" height="14" viewBox="0 0 50 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M2,7 C12,7 18,2 25,2 C32,2 38,7 48,7" opacity="0.4"/>
+            <path d="M25,2 C22,5 18,6 15,6 C18,8 22,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+            <path d="M25,2 C28,5 32,6 35,6 C32,8 28,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+          </svg>
+        </div>
+      </div>
+
+      <span class="eyebrow" style="color: #2A1F1A; font-weight: 500;">The Wedding Party</span>
+      <h2 style="margin-bottom:6px">Our Pillars in This Union</h2>
+      <p class="italic-note" style="margin-bottom:48px; color: rgba(42,31,26,0.85);">Held by God’s grace and the love of our parents and families,<br>we joyfully choose to tie the knot.</p>
+
+      <div style="margin-bottom:48px;">
+        <div class="ent-label" style="border-bottom-color: rgba(42,31,26,0.15);">The Parents</div>
+        <div class="ent-parents">Mr. Leopoldo Q. Gonzales &amp; Mrs. Ma. Teresa D. Gonzales</div>
+        <div class="ent-family" style="margin-bottom:16px; color: rgba(42,31,26,0.7);">Parents of the Groom</div>
+        <div class="ent-parents">Mr. Felixberto M. Castillo &amp; Mrs. Rafaela M. Castillo</div>
+        <div class="ent-family" style="color: rgba(42,31,26,0.7);">Parents of the Bride</div>
+      </div>
+
+      <div style="margin-bottom:48px;">
+        <div class="ent-label" style="border-bottom-color: rgba(42,31,26,0.15);">Principal Sponsors</div>
+        <p class="italic-note" style="font-size:13px;margin-bottom:24px;color:rgba(42,31,26,0.7);">to witness our exchange of vows &amp; be our guide in marriage</p>
+        <div class="ent-cols">
+          <div>
+            <div class="ent-label" style="font-size:8px;margin-bottom:12px;border-bottom:none;">Ninong</div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Sergio M. Carandang</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Arch. Joel L. De Juan</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Olivo M. Quimio</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Jeric M. Natividad</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Roque L. Castillo</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. George M. Saniano</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Kap. Domingo A. Carpio</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Jeffrey B. Deriquito</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Elmer B. Barquilla</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Allan Narvaez</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Rene A. Malijan</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Edgar Q. Gonzales</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Zaldy De Chavez</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Malvin M. Gonzales</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mr. Aries G. Chavez</div></div>
+            <div class="sponsor-item" style="border-bottom:none"><div class="sponsor-name">Atty. Raegan L. Capuno</div></div>
+          </div>
+          <div>
+            <div class="ent-label" style="font-size:8px;margin-bottom:12px;border-bottom:none;">Ninang</div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Juana L. Carandang</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Dra. Tess Q. De Juan</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Evelyn C. Quimio</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Amabel M. Natividad</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Rosebelle Castillo</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Ms. Elvie C. Marudo</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Flordeliza S. Gonzales</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Verna C. Deriquito</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Ma. Lina O. Barquilla</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Lorlita Narvaez</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Ma. Rowena E. Malijan</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Melanie D. Gonzales</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Ms. Carlota Alcantara</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Michelle Gonzales</div></div>
+            <div class="sponsor-item" style="border-bottom-color:rgba(42,31,26,0.1);"><div class="sponsor-name">Mrs. Adora O. Chavez</div></div>
+            <div class="sponsor-item" style="border-bottom:none;"><div class="sponsor-name">Dr. Mylen Capuno</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:48px;">
+        <div class="ent-label" style="border-bottom-color: rgba(42,31,26,0.15);">The Chosen Circle</div>
+        <p class="italic-note" style="font-size:13px;margin-bottom:32px;color:rgba(42,31,26,0.7);">the persons closest to our hearts, who will assist us with our needs</p>
+        
+        <div class="ent-cols" style="margin-bottom:40px">
+          <div style="text-align:center">
+            <div class="ent-label" style="font-size:8px;margin-bottom:10px;border-bottom:none;">Best Man</div>
+            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:var(--ink)">Mark Eriel M. Montero</div>
+          </div>
+          <div style="text-align:center">
+            <div class="ent-label" style="font-size:8px;margin-bottom:10px;border-bottom:none;">Maid of Honor</div>
+            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:var(--ink)">Mariel M. Castillo</div>
+          </div>
+        </div>
+
+        <p class="italic-note" style="font-size:13px;margin-bottom:24px;border-top:1px solid rgba(42,31,26,0.1);padding-top:24px;color:rgba(42,31,26,0.7);">to guide us on our way to the altar</p>
+        <div class="ent-cols">
+          <div>
+            <div class="ent-label" style="font-size:8px;margin-bottom:12px;border-bottom:none;">Groomsmen</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Louie P. Castillo</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Paolo M. Delos Reyes</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Julian Emmanuel M. Hidalgo</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Robert Daniel A. Aliscuano</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Charles Aldrin S. Dimaunahan</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Mark Joseph Q. Canupin</div>
+          </div>
+          <div>
+            <div class="ent-label" style="font-size:8px;margin-bottom:12px;border-bottom:none;">Bridesmaids</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Ericka Q. Lumbres</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Rein Mikaella M. Arcega</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Dezerein Faye G. Mansit</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Ma. Naomi D. Managa</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Maricon M. Poot</div>
+            <div class="ent-name-pair" style="border-bottom-color:rgba(42,31,26,0.1);">Liza L. Quilao</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:48px;">
+        <div class="ent-label" style="border-bottom-color: rgba(42,31,26,0.15);">Secondary Sponsors</div>
+        <p class="italic-note" style="font-size:13px;margin-bottom:24px;color:rgba(42,31,26,0.7);">to lay our love to each other</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center">
+          <div>
+            <div class="cap" style="font-size:8px;margin-bottom:10px;color:#2A1F1A;">Candle<br><span style="color:rgba(42,31,26,0.6);font-size:7px;text-transform:none;font-style:italic">to light up our path</span></div>
+            <div class="ent-name-pair" style="font-size:13px;border-bottom:none">Christopher Dioneda</div>
+            <div class="ent-name-pair" style="font-size:13px;border-bottom:none">Lea Marie D. Gonzales</div>
+          </div>
+          <div>
+            <div class="cap" style="font-size:8px;margin-bottom:10px;color:#2A1F1A;">Veil<br><span style="color:rgba(42,31,26,0.6);font-size:7px;text-transform:none;font-style:italic">to clothe us as one</span></div>
+            <div class="ent-name-pair" style="font-size:13px;border-bottom:none">Christian V. Uri</div>
+            <div class="ent-name-pair" style="font-size:13px;border-bottom:none">Dra. Rose An Elizabeth C. Quimio</div>
+          </div>
+          <div>
+            <div class="cap" style="font-size:8px;margin-bottom:10px;color:#2A1F1A;">Cord<br><span style="color:rgba(42,31,26,0.6);font-size:7px;text-transform:none;font-style:italic">to bind us together</span></div>
+            <div class="ent-name-pair" style="font-size:13px;border-bottom:none">Darwin D. Adino</div>
+            <div class="ent-name-pair" style="font-size:13px;border-bottom:none">Chilsea Malor Q. Opena</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ent-label" style="border-bottom-color: rgba(42,31,26,0.15);">The Little Ones</div>
+        
+        <p class="italic-note" style="font-size:13px;margin-bottom:20px;color:rgba(42,31,26,0.7);">to carry our symbol of love, faith, and treasures</p>
+        <div class="ent-grid" style="margin-bottom:32px">
+          <div class="ent-grid-item" style="border-color: rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Ring Bearer</span>Elias Maui S. Castillo</div>
+          <div class="ent-grid-item" style="border-color: rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Bible Bearer</span>Kyle S. Delos Reyes</div>
+          <div class="ent-grid-item" style="border-color: rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Coin Bearer</span>Caelus Light D. Castillo</div>
+          <div class="ent-grid-item" style="grid-column:1/-1;max-width:200px;margin:0 auto;width:100%;border-color:rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Banner Bearer</span>Felix Rafael Castillo</div>
+        </div>
+
+        <p class="italic-note" style="font-size:13px;margin-bottom:20px;border-top:1px solid rgba(42,31,26,0.1);padding-top:24px;color:rgba(42,31,26,0.7);">to shower our aisle with flowers</p>
+        <div class="ent-grid">
+          <div class="ent-grid-item" style="border-color: rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Flower Girl</span>Ellie Grace L. Pamplona</div>
+          <div class="ent-grid-item" style="border-color: rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Flower Girl</span>Maui Elise S. Castillo</div>
+          <div class="ent-grid-item" style="border-color: rgba(42,31,26,0.15);"><span class="ent-grid-role" style="color:#2A1F1A;">Flower Girl</span>Sophia Louise S. Gonzales</div>
+        </div>
+      </div>
+
+      <div class="floral-accent bot" style="background: transparent;">
+        <div style="background: #F5CDD2; border-radius: 20px; padding: 0 12px; display: flex; align-items: center;">
+          <svg width="50" height="14" viewBox="0 0 50 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="transform: rotate(180deg);">
+            <path d="M2,7 C12,7 18,2 25,2 C32,2 38,7 48,7" opacity="0.4"/>
+            <path d="M25,2 C22,5 18,6 15,6 C18,8 22,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+            <path d="M25,2 C28,5 32,6 35,6 C32,8 28,8 25,6 Z" fill="currentColor" opacity="0.25"/>
+          </svg>
+        </div>
+      </div>
+
+    </div></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 6 — DETAILS (dark)
+     CUSTOMIZE: #s-details .sec-bg
+══════════════════════════════════════════ -->
+<section class="sec sec-short" id="s-details">
+  <div class="sec-bg"></div>
+  <div class="con">
+    <span class="eyebrow eyebrow-l fi">The Details</span>
+    <h2 class="l fi" style="margin-bottom:32px">Everything You Need to Know</h2>
+
+    <!-- Dress Code -->
+    <div class="card-d fi">
+      <div class="cap-l" style="margin-bottom:18px">Dress Code</div>
+
+      <div style="margin: 32px auto; max-width: 90%; display: flex; justify-content: center;">
+        <img src="dresscode.png" alt="Dress Code Inspiration" style="width: 100%; max-width: 400px; height: auto; display: block; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));">
+      </div>
+
+      <div class="div" style="margin:20px 0"><div class="div-line-l div-line"></div><div class="div-gem-l div-gem"></div><div class="div-line-l div-line"></div></div>
+
+      <p class="body-l" style="font-size:15px;line-height:1.9;margin-bottom:24px">
+        <strong style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;font-weight:400;color:rgba(236,201,106,.7)">ENTOURAGE &amp; SPONSORS</strong><br>
+        Barong Tagalog with black slacks (gentlemen) or solid-colored long dresses in sunset shades (ladies).
+      </p>
+      
+      <p class="body-l" style="font-size:15px;line-height:1.9;margin-bottom:20px">
+        <strong style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;font-weight:400;color:rgba(236,201,106,.7)">GENERAL GUESTS</strong><br>
+        Wear anything you’re comfortable in. If you’d like to match our theme, you may choose any of the sunset shades below.
+      </p>
+
+      <div class="swatches" style="margin-top: 10px; margin-bottom: 0;">
+        <div class="swatch">
+          <div class="sw-circle" style="background:linear-gradient(135deg,#C8714A,#A05030)"></div>
+          <div class="sw-name">Terracotta</div>
+        </div>
+        <div class="swatch">
+          <div class="sw-circle" style="background:linear-gradient(135deg,#D9724A,#B85030)"></div>
+          <div class="sw-name">Sunset</div>
+        </div>
+        <div class="swatch">
+          <div class="sw-circle" style="background:linear-gradient(135deg,#D4A843,#B08820)"></div>
+          <div class="sw-name">Dusty Gold</div>
+        </div>
+        <div class="swatch">
+          <div class="sw-circle" style="background:linear-gradient(135deg,#8A9E82,#6A7E62)"></div>
+          <div class="sw-name">Sage</div>
+        </div>
+        <div class="swatch">
+          <div class="sw-circle" style="background:linear-gradient(135deg,#E8A0A8,#C07880)"></div>
+          <div class="sw-name">Blush</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gifts -->
+    <div class="card-d fi d1" style="margin-top:14px">
+      <div class="cap-l" style="margin-bottom:14px">Gift Wishes</div>
+      <h3 class="l" style="margin-bottom:12px">Your Presence is the Present</h3>
+      <p class="body-l" style="font-size:15px;line-height:1.9">
+        Truly, your prayers and presence mean the world to us. But if you'd like to bless us with something more, monetary gifts are warmly appreciated — to help us begin our new chapter together.
+      </p>
+    </div>
+
+    <!-- QR Codes -->
+    <div class="card-d fi d2" style="margin-top:14px">
+      <div class="cap-l" style="margin-bottom:20px">Getting There &amp; Sharing Memories</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div>
+          <div class="qr-box">
+          <img src="church-qr.png" style="width:100%;height:100%;object-fit:contain"> 
+          </div>
+          <div class="cap-l" style="margin-top:10px;font-size:9px">St. Augustine Parish</div>
+        </div>
+        <div>
+          <div class="qr-box">
+             <img src="pat-qr.png" style="width:100%;height:100%;object-fit:contain"> 
+          </div>
+          <div class="cap-l" style="margin-top:10px;font-size:9px">Patricio's Café</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 7 — EVENT TIMELINE (dark)
+     CUSTOMIZE: #s-timeline .sec-bg
+══════════════════════════════════════════ -->
+<section class="sec sec-short" id="s-timeline">
+  <div class="sec-bg"></div>
+  <div class="con">
+    <span class="eyebrow eyebrow-l fi">June 27, 2026</span>
+    <h2 class="l fi" style="margin-bottom:6px">The Day's Journey</h2>
+    <p class="body-l fi" style="font-style:italic;font-size:15px;margin-bottom:48px;opacity:.55">A timeline to guide you through our most cherished day</p>
+
+    <div class="evt-list">
+      <div class="evt-item"><div class="evt-time">1:30 PM</div><div><div class="evt-name">Wedding Ceremony</div><div class="evt-note">St. Augustine Parish · Brgy. Santor, Tanauan City</div></div></div>
+      <div class="evt-item"><div class="evt-time">3:30 PM</div><div><div class="evt-name">Post-Nuptial</div><div class="evt-note">Newlywed portraits &amp; family photos after the ceremony</div></div></div>
+      <div class="evt-item"><div class="evt-time">3:45 PM</div><div><div class="evt-name">Reception Arrival</div><div class="evt-note">Patricio's Café &amp; Restaurant · Brgy. Luyos, Tanauan City</div></div></div>
+      <div class="evt-item"><div class="evt-time">5:00 PM</div><div><div class="evt-name">Dinner Buffet</div><div class="evt-note">A feast of celebration opens</div></div></div>
+      <div class="evt-item"><div class="evt-time">Onwards</div><div><div class="evt-name">Celebration</div><div class="evt-note">Mingle, laugh, and toast to the newlyweds</div></div></div>
+      <div class="evt-item"><div class="evt-time">7:00 PM</div><div><div class="evt-name">Fireworks</div><div class="evt-note">Light up the Batangas sky in their honor</div></div></div>
+      <div class="evt-item"><div class="evt-time">Late Night</div><div><div class="evt-name">Barekan</div><div class="evt-note">The real party. Stay as long as your heart desires.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SECTION 8 — CLOSING
+     CUSTOMIZE: #s-closing .sec-bg (reuses s-details style)
+══════════════════════════════════════════ -->
+<section class="sec" id="s-closing" style="background: transparent; position: relative;">
+  
+  <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    <source src="last.mp4" type="video/mp4">
+  </video>
+
+  <div class="sec-bg" style="background: rgba(22, 13, 8, 0.75);"></div>
+  
+  <div class="con">
+    <div class="closing-names fi">
+      Leomar<br>
+      <span style="font-size:.55em;color:var(--gold-l);font-style:normal">&amp;</span><br>
+      Elizabeth
+    </div>
+
+    <div class="div div-ctr fi d1">
+      <div class="div-line div-line-l"></div>
+      <div class="div-gem div-gem-l"></div>
+      <div class="div-line div-line-l"></div>
+    </div>
+
+    <span class="fi d1" style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:.45em;color:rgba(236,201,106,.58);display:block;margin-bottom:32px">JUNE 27 · 2026 · TANAUAN CITY, BATANGAS</span>
+
+    <div class="fi d2" style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; line-height: 1.85; color: rgba(245, 237, 216, 0.9); max-width: 520px; margin: 0 auto 48px;">
+      Throughout our journey in our relationship, we’ve felt love and support not just from each other, but also from the people around us. Everyone has made us feel seen, valued, and included. So for our wedding, we want to keep that same vibe—something simple, inclusive, with less rules, and open to everyone. Your presence is what matters most to us.<br><br>
+      See you on our big day!<br><br>
+      With sml,<br>
+      <span style="color: var(--gold-l); font-size: 22px; display: inline-block; margin-top: 4px;">Leomar and Eli</span>
+    </div>
+
+    <div class="fi d3" style="display:inline-block;padding:22px 36px;border:1px solid rgba(236,201,106,.18);border-top-color:rgba(236,201,106,.38);border-radius:4px; background: rgba(22, 13, 8, 0.35); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+      <div class="cap-l" style="margin-bottom:8px">Kindly RSVP by</div>
+      <div style="font-family:'Cinzel',serif;font-size:16px;color:var(--gold-l);letter-spacing:.2em">June 1, 2026</div>
+      <div class="cap-l" style="margin-top:12px;font-size:8.5px;opacity:.55">Contact details to follow</div>
+    </div>
+
+    <div class="fi d4" style="margin-top:40px;opacity:.25">
+      <svg width="50" height="30" viewBox="0 0 50 30" fill="none">
+        <path d="M25,1 C25,1 20,12 10,10 C18,10 12,20 12,20 C12,20 20,16 25,28 C30,16 38,20 38,20 C38,20 32,10 40,10 C30,12 25,1 25,1Z" fill="rgba(236,201,106,.6)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── MUSIC PLAYER ── -->
+<!-- CUSTOMIZE: Replace YOUR_AUDIO_URL with a direct link to your MP3 -->
+<audio id="waudio" loop preload="none">
+  <source src="theme-song.mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-player">
+  <div class="mlabel" id="mlabel">♪ Our Song</div>
+  <button class="mbtn" onclick="toggleMusic()" aria-label="Play music">
+    <svg class="play-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><polygon points="4,2 14,8 4,14"/></svg>
+    <div class="eq-icon sw-bars" style="display:none">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+  </button>
+</div>
+
+<!-- ── NAV DOTS ── -->
+<nav id="nav" aria-label="Sections">
+  <div class="ndot a" onclick="scrollTo({top:0,behavior:'smooth'})" title="Top"></div>
+  <div class="ndot" onclick="sid('s-savedate')" title="Save the Date"></div>
+  <div class="ndot" onclick="sid('s-story')" title="Love Story"></div>
+  <div class="ndot" onclick="sid('s-trail')" title="Memory Trail"></div>
+  <div class="ndot" onclick="sid('s-entourage')" title="Entourage"></div>
+  <div class="ndot" onclick="sid('s-details')" title="Details"></div>
+  <div class="ndot" onclick="sid('s-timeline')" title="Timeline"></div>
+  <div class="ndot" onclick="sid('s-closing')" title="Closing"></div>
+</nav>
+
+<script>
+ // ── PAGE LOADER ──
+document.body.classList.add('loading'); 
+window.addEventListener('load', () => {
+  // Wait 3 seconds for the snappy CSS animation to finish
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('hidden'); 
+    document.body.classList.remove('loading'); 
+    
+    // Remove from DOM completely
+    setTimeout(() => { loader.style.display = 'none'; }, 600);
+  }, 3000); // Changed from 4000 to 3000
+});
+
+// ── COUNTDOWN ──
+function tick() {
+  const t = new Date('2026-06-27T13:30:00+08:00') - new Date();
+  const d = Math.max(0, Math.floor(t/86400000));
+  const h = Math.max(0, Math.floor(t%86400000/3600000));
+  const m = Math.max(0, Math.floor(t%3600000/60000));
+  const s = Math.max(0, Math.floor(t%60000/1000)); // Calculates seconds
+  
+  // Notice we added 'cd-s' and 'cd-s2' and the 's' variables to these arrays
+  ['cd-d','cd-h','cd-m','cd-s','cd-d2','cd-h2','cd-m2','cd-s2'].forEach((id,i) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = [d,h,m,s,d,h,m,s][i];
+  });
+}
+tick(); setInterval(tick, 1000); // Changed from 30000 to 1000 (1 second)
+
+// ── SCROLL FADE ──
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fi,.trail-item').forEach(el => io.observe(el));
+
+// Event items stagger
+const eio = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){
+    const items = e.target.querySelectorAll('.evt-item');
+    items.forEach((el,i) => setTimeout(() => el.classList.add('vis'), i*80));
+    eio.unobserve(e.target);
+  }
+}),{threshold:.08});
+const evtList = document.querySelector('.evt-list');
+if(evtList) eio.observe(evtList);
+
+// ── NAV DOTS ──
+const secIds = ['s-hero','s-savedate','s-story','s-trail','s-entourage','s-details','s-timeline','s-closing'];
+const dots = document.querySelectorAll('.ndot');
+
+function sid(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+const sio = new IntersectionObserver(es => {
+  es.forEach(e => { 
+    if(e.isIntersecting){
+      const i = secIds.indexOf(e.target.id);
+      if(i >= 0){
+        dots.forEach(d => d.classList.remove('a'));
+        if(dots[i]) dots[i].classList.add('a');
+      }
+    }
+  });
+// Changed threshold to a rootMargin. Now it triggers when a section hits the middle of the screen!
+}, { rootMargin: "-40% 0px -40% 0px" }); 
+
+secIds.forEach(id => {
+  const el = document.getElementById(id);
+  if(el) sio.observe(el);
+});
+
+// ── MUSIC PLAYER ──
+const audio = document.getElementById('waudio');
+const mbtn  = document.getElementById('mbtn');
+const picon = document.getElementById('picon');
+const sicon = document.getElementById('sicon');
+const lbl   = document.getElementById('mlabel');
+let playing = false, lblTimer;
+
+function showLabel(txt, dur=3000){
+  lbl.textContent = txt;
+  lbl.classList.add('show');
+  clearTimeout(lblTimer);
+  lblTimer = setTimeout(() => lbl.classList.remove('show'), dur);
+}
+
+function toggleMusic(){
+  // Find all music buttons on the page (the hero one and the floating one)
+  const mbtns = document.querySelectorAll('.mbtn');
+  
+  if(!playing){
+    if (audio.currentTime === 0) { audio.currentTime = 19; } // Skips 10 seconds in
+    audio.play().then(()=>{
+      playing = true;
+      mbtns.forEach(btn => {
+        btn.classList.add('playing');
+        btn.querySelector('.play-icon').style.display = 'none';
+        btn.querySelector('.eq-icon').style.display = 'flex';
+      });
+      showLabel('♪ Playing our song');
+    }).catch(()=>showLabel('Add audio URL in code ↗'));
+  } else {
+    audio.pause(); playing = false;
+    mbtns.forEach(btn => {
+      btn.classList.remove('playing');
+      btn.querySelector('.play-icon').style.display = 'block';
+      btn.querySelector('.eq-icon').style.display = 'none';
+    });
+    showLabel('♪ Paused', 2000);
+  }
+}
+
+// First-scroll hint
+let hinted = false;
+window.addEventListener('scroll', () => {
+  if(!hinted && !playing){ hinted = true; showLabel('♪ Play our song'); }
+}, {passive:true});
+
+// Hero entrance
+document.querySelectorAll('#s-hero .fi').forEach((el,i) => setTimeout(() => el.classList.add('vis'), 350+i*180));
+</script>
+</body>
+</html>
