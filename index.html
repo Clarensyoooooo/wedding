@@ -500,6 +500,31 @@ h3.l{color:var(--cream)}
 .sw-circle{width:58px;height:58px;border-radius:50%;border:3px solid #fff;box-shadow:0 8px 20px rgba(217,114,74,.15);position:relative;margin:0 auto 8px}
 .sw-name{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
 
+/* ── DRESS CODE SWATCHES (Light Theme) ── */
+.swatches { 
+  display: flex; 
+  gap: 16px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+  margin: 20px 0 36px; 
+}
+.swatch { text-align: center; }
+.sw-circle { 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 50%; 
+  border: 3px solid #FFF; 
+  box-shadow: 0 8px 20px rgba(217,114,74,0.15); 
+  margin: 0 auto 8px; 
+}
+.sw-name { 
+  font-family: 'Jost', sans-serif; 
+  font-size: 8.5px; 
+  letter-spacing: 0.15em; 
+  color: var(--muted); 
+  text-transform: uppercase; 
+}
+
 /* ── FALLING PETALS ── */
 #petal-container {
   position: fixed;
@@ -744,25 +769,26 @@ h3.l{color:var(--cream)}
 
         <div class="bigdate">Saturday · June 27, 2026</div>
 
-        <div class="card d1" style="margin-top:22px">
+        <div class="fi d1" style="margin-top:16px; margin-bottom:48px; padding:0 10px;">
           <div class="cap" style="margin-bottom:10px">Ceremony</div>
           <div class="venue">St. Augustine Parish</div>
-          <span class="time-big">1:30 PM</span>
+          <span class="time-big" style="margin: 8px 0;">1:30 PM</span>
           <div class="vdet">Brgy. Santor, Tanauan City, Batangas</div>
         </div>
 
-         <div class="photo-slot d2" style="margin-top:22px">
+         <div class="photo-slot fi d2" style="margin-top:22px">
           <img src="pat.jpg" alt="Patricio's Cafe & Restaurant">
         </div>
 
-        <div class="card d2">
+        <div class="fi d3" style="margin-top:28px; padding:0 10px;">
           <div class="cap" style="margin-bottom:10px">Dinner &amp; Celebration</div>
           <div class="venue">Patricio's Café &amp; Restaurant</div>
           <div class="vdet" style="margin-top:8px">Brgy. Luyos, Tanauan City, Batangas</div>
         </div>
 
-       
-      </div><div class="floral-accent bot">
+      </div>
+      
+      <div class="floral-accent bot">
         <svg width="50" height="14" viewBox="0 0 50 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="transform: rotate(180deg);">
           <path d="M2,7 C12,7 18,2 25,2 C32,2 38,7 48,7" opacity="0.4"/>
           <path d="M25,2 C22,5 18,6 15,6 C18,8 22,8 25,6 Z" fill="currentColor" opacity="0.25"/>
@@ -770,7 +796,8 @@ h3.l{color:var(--cream)}
         </svg>
       </div>
 
-    </div></div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -780,8 +807,8 @@ h3.l{color:var(--cream)}
 <section class="sec sec-short" id="s-story">
   
   <div class="sec-bg">
-    <div class="bg-half" style="background-image: url('story1.jpg');"></div>
     <div class="bg-half" style="background-image: url('story2.jpg');"></div>
+    <div class="bg-half" style="background-image: url('story1.jpg');"></div>
   </div>
   
   <div class="con" style="z-index: 2;">
@@ -1306,8 +1333,31 @@ h3.l{color:var(--cream)}
           <span>Dress Code</span>
         </div>
 
-        <div style="margin: 20px auto 32px; max-width: 90%; display: flex; justify-content: center;">
-          <img src="dresscode.png" alt="Sunset Palette" style="width: 100%; max-width: 320px; height: auto; display: block; border-radius: 8px; box-shadow: 0 8px 20px rgba(217, 114, 74, 0.15);">
+        <div style="margin: 20px auto 24px; max-width: 90%; display: flex; justify-content: center;">
+          <img src="dresscode.png" alt="Dress Code Inspiration" style="width: 100%; max-width: 320px; height: auto; display: block;">
+        </div>
+
+        <div class="swatches" style="margin-bottom: 32px;">
+          <div class="swatch">
+            <div class="sw-circle" style="background: #e0623c;"></div>
+            <div class="sw-name">Terracotta</div>
+          </div>
+          <div class="swatch">
+            <div class="sw-circle" style="background: #ffde59;"></div>
+            <div class="sw-name">Sunlight</div>
+          </div>
+          <div class="swatch">
+            <div class="sw-circle" style="background: #ff690b;"></div>
+            <div class="sw-name">Tangerine</div>
+          </div>
+          <div class="swatch">
+            <div class="sw-circle" style="background: #fc5e53;"></div>
+            <div class="sw-name">Coral</div>
+          </div>
+          <div class="swatch">
+            <div class="sw-circle" style="background: #ef9525;"></div>
+            <div class="sw-name">Marigold</div>
+          </div>
         </div>
 
         <p class="body" style="font-size:15px;line-height:1.9;margin-bottom:24px">
@@ -1629,6 +1679,7 @@ secIds.forEach(id => {
   const el = document.getElementById(id);
   if(el) sio.observe(el);
 });
+
 
 
 // ── FALLING PETALS ANIMATION ──
